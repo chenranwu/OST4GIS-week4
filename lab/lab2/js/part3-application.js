@@ -27,9 +27,8 @@
   Define a resetMap function to remove markers from the map and clear the array of markers
 ===================== */
 var resetMap = function() {
-  /* =====================
-    Fill out this function definition
-  ===================== */
+   _.each(myMarkers, function(mark){map.removeLayer(mark)});
+   myMarkers=[];
 };
 
 /* =====================
@@ -38,9 +37,9 @@ var resetMap = function() {
   it down!
 ===================== */
 var getAndParseData = function() {
-  /* =====================
-    Fill out this function definition
-  ===================== */
+  var downloadData = $.ajax("https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-solar-installations.json");
+  downloadData.then(function(data){myData = JSON.parse(data);});
+  return myData;
 };
 
 /* =====================
@@ -48,7 +47,13 @@ var getAndParseData = function() {
   criteria happens to be — that's entirely up to you)
 ===================== */
 var plotData = function() {
-  /* =====================
-    Fill out this function definition
-  ===================== */
+  _.map(myData,function(data){
+    if(numericField1==""){numericField1 = 0};
+    if(numericField2==""){numericField2 = 99999};
+    if(data.ZIPCODE >= numericField1 && data.ZIPCODE <= numericField2 && (data.DEVELOPER == stringField || stringField == "") && (data.YEARBUILT <=2010)==booleanField){
+      Marker = L.marker([data.Y, data.X]);
+      myMarkers.push(Marker);
+      return Marker.addTo(map);
+    }
+  })
 };

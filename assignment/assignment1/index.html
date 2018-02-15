@@ -50,10 +50,50 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+      <table>
+           <col width = "300px">
+       <tr>
+           <th height="25" align="left"><h1>Filters</h1></th>
+           <th height="25"><button align = "center" style ="width:100px;background-color:#f5f5f5; border: 1px solid grey;padding: 0px;font-weight:normal">Hide Filters</button></th>
+       </tr>
 
-      <!-- =====================
-      Add HTML!
-      ====================== -->
+      </table>
+           <h3>By Name</h3>
+           <input type="text" name="By Name" value="" style="width:300px;height:25px; background-color:white;border:1px solid #e6e6e6">
+              <h3>By Grade</h3>
+              <select class="form-control" id="spec_num0" name="spec_num" onchange="document.getElementById('input0').value=$('#spec_num0 option:selected').text()"style ="width:120px;border: 1px solid #e6e6e6">
+                 <option>All Grades</option>
+                 <option>Elem</option>
+                 <option>Middle</option>
+                 <option>High</option>
+              </select>
+
+           <h3></h3>
+           <div style="width:300px; background-color:white;border:0.5px solid black"></div>
+              <h2></h2>
+              <h1>Schools</h1>
+           <h2></h2>
+           <div style="width:300px;background-color:#f5f5f5;padding-left:10px;padding-top:5px;padding-bottom:5px; line-height:2px">
+              <h3>Henry, Charles W.</h3>
+              <h4>Elem/Middle</h4>
+              <br></br>
+              <p>601 Carpenter La.</p>
+              <p>19119-3405</p>
+           </div>
+           <p></p>
+           <div style="width:300px;background-color:#f5f5f5;padding-left:10px;padding-top:5px;padding-bottom:5px; line-height:2px">
+              <h3 style="line-height:20px;margin-bottom:0px">Universal Creighton Charter School</h3>
+              <h4 style="margin-top:12px">Elem/Middle</h4>
+              <br></br>
+              <p>601 Carpenter La.</p>
+              <p>19119-3405</p>
+           </div>
+           <p></p>
+           <div style="width:300px;background-color:#f5f5f5;padding-left:10px;padding-top:20px;padding-bottom:5px; line-height:2px">
+              <h3>Marshall, John</h3>
+              <h4>Elem/Middle</h4>
+           </div>
+
 
     </div>
     <!-- Map -->
